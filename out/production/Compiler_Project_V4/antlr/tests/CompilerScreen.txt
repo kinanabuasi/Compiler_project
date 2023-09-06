@@ -1,0 +1,65 @@
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+
+class compilerScreen extends StatefulWidget {
+  const compilerScreen({key? key}) : super(key: key);
+
+  @override
+  State<compilerScreen> createState() => _compilerScreenState();
+}
+
+
+class _compilerScreenState extends State<compilerScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("testscreen"),
+      ),
+      body: Row(
+        children: [
+          SizedBox(width: 10,),
+
+          Expanded(
+            child: Container(
+              width: 120,
+              height: 800,
+              child: ListView.builder(
+                itemCount: names.length,
+                itemBuilder: ((BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                       height: 120,
+                       width: 120,
+                      child: Column(
+                        children: [
+                          Text("${names[index]}"),
+
+
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Container(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset("${images[index]}"),),
+                          ),
+                        ],
+                      ),
+
+                    ),
+                  ),
+                }
+                ),
+                ),
+              ),
+            ),
+
+        ],
+      ),
+
+    );
+  }
+}
+
+

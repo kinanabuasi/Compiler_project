@@ -1,0 +1,27 @@
+import "package:flutter/cupertino.dart";
+class Test {
+int a=8;
+int b;
+
+String b="wasem";
+map<int,int> h;
+map<int,String> w={1:"a",2:"b",3:"c"};
+List<int> k=[1,2,3,4];
+bool t=true;
+bool f=false;
+void testFun()
+{
+if(a==3)
+{
+print("Done");
+}
+}
+int test()
+{
+return 5;
+}
+for(int i=0;;i<6;i++)
+{
+print("Done");
+}
+}

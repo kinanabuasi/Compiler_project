@@ -1,0 +1,81 @@
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+
+class compiler_screen extends StatefulWidget {
+  const compiler_screen({key? key}) : super(key: key);
+
+  @override
+  State<compiler_screen> createState() => _compiler_screenState();
+}
+final List<String> names=["product1","product2","product3","product4","product5","product6","product7"];
+final List<String> images=["lib/images/images.png","lib/images/image2.jpg","lib/images/image3.jpg","lib/images/image3.jpg","lib/images/image3.jpg","lib/images/image3.jpg","lib/images/image3.jpg"];
+final List<String> detailes=["this is a 1","this is a 2","this is a 3","this is a 4","this is a 5","this is a 6","this is a 7"];
+
+class _compiler_screenState extends State<compiler_screen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("test screen"),
+      ),
+      body: Row(
+        children: [
+          SizedBox(width: 10,),
+          con(1, "this is a 1"),
+          Expanded(
+            child: Container(
+              width: 120,
+              height: 800,
+              child: ListView.builder(
+                itemCount: names.length,
+                itemBuilder: ((BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        con(index,detailes[index]);
+
+
+                      }
+                     );
+                    },
+                    child: Container(
+                       height: 120,
+                       width: 120,
+                      child: Column(
+                        children: [
+                          Text("${names[index]}"),
+
+                          //SizedBox(height: 10,),
+
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Container(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset('${images[index]}')),
+                          ),
+                        ],
+                      ),
+
+                    ),
+                  );
+                }
+                ),
+              ),
+            ),
+          ),
+        ],
+
+      ),
+
+    );
+  }
+}
+
+Widget con(int i,String s)=>Container(
+  width: 300,
+  height: 200,
+  color: Colors.grey.shade200,
+  child: Center(child: Text("product: $i,nditeles: $s")),
+
+);
